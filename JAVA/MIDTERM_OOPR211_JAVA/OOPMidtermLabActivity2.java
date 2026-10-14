@@ -11,7 +11,7 @@ public class OOPMidtermLabActivity2 {
         long remainingDays;
         int pagesLeft, pagesPerDay;
 
-        System.out.println("=== LIBRARY BOOK SYSTEM ===");
+        System.out.println("=== Welcome Nestor Guerrero ===");
 
         System.out.print("Enter total pages of the book: ");
         totalPages = input.nextInt();
@@ -21,6 +21,10 @@ public class OOPMidtermLabActivity2 {
 
         input.nextLine();
 
+        if (totalPages <= 0 || pagesRead < 0 || pagesRead > totalPages) {
+            System.out.println("Invalid page input.");
+        }else{
+
         System.out.print("Enter issue date (YYYY-MM-DD): ");
         LocalDate issueDate = LocalDate.parse(input.nextLine());
 
@@ -29,9 +33,7 @@ public class OOPMidtermLabActivity2 {
 
         LocalDate today = LocalDate.now();
 
-        if (totalPages <= 0 || pagesRead < 0 || pagesRead > totalPages) {
-            System.out.println("Invalid page input.");
-        } else if (dueDate.isBefore(issueDate)) {
+ if (dueDate.isBefore(issueDate)) {
             System.out.println("Due date cannot be before issue date.");
         } else {
             percentage = (double) pagesRead / totalPages * 100;
@@ -66,6 +68,6 @@ public class OOPMidtermLabActivity2 {
             }
         }
 
-        input.close();
+                input.close();}
     }
 }
